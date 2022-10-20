@@ -1,0 +1,241 @@
+Comparando algortimo de Bubble Sort em C++ e JavaScript
+
+
+C++ Bublle Sort
+ 
+// A function to implement bubble sort
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+ 
+        // Last i elements are already
+        // in place
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(arr[j], arr[j + 1]);
+}
+ 
+// Function to print an array
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+ 
+// Driver code
+int main()
+{
+    int arr[] = { 5, 1, 4, 2, 8};
+    int N = sizeof(arr) / sizeof(arr[0]);
+    bubbleSort(arr, N);
+    cout << "Sorted array: \n";
+    printArray(arr, N);
+    return 0;
+}
+
+
+
+
+
+
+
+JavaScript Bubble Sort
+
+<script>
+ 
+function swap(arr, xp, yp)
+{
+    var temp = arr[xp];
+    arr[xp] = arr[yp];
+    arr[yp] = temp;
+}
+ 
+// An optimized version of Bubble Sort
+function bubbleSort( arr, n)
+{
+var i, j;
+for (i = 0; i < n-1; i++)
+{
+    for (j = 0; j < n-i-1; j++)
+    {
+        if (arr[j] > arr[j+1])
+        {
+        swap(arr,j,j+1);
+         
+        }
+    }
+ 
+}
+}
+ 
+/* Function to print an array */
+function printArray(arr, size)
+{
+    var i;
+    for (i=0; i < size; i++)
+        document.write(arr[i]+ " ");
+    document.write("\n");
+}
+ 
+// Driver program to test above functions
+  var arr = [64, 34, 25, 12, 22, 11, 90];
+    var n = 7;
+    document.write("UnSorted array: \n");
+    printArray(arr, n);
+ 
+    bubbleSort(arr, n);
+    document.write("Sorted array: \n");
+    printArray(arr, n);
+ 
+ 
+</script>
+
+
+Comparando os métodos de Bubble Sort em C++ e JavaScript, observamos que apresentam exatamente a mesma complexidade: O(n)². Complexidade Quadrática.
+
+
+
+
+
+
+
+Comparando algoritmo de pilha em Python e C#
+
+
+
+Python Pilha
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+ 
+ 
+class Stack:
+ 
+    # Initializing a stack.
+    # Use a dummy node, which is
+    # easier for handling edge cases.
+    def __init__(self):
+        self.head = Node("head")
+        self.size = 0
+ 
+    # String representation of the stack
+    def __str__(self):
+        cur = self.head.next
+        out = ""
+        while cur:
+            out += str(cur.value) + "->"
+            cur = cur.next
+        return out[:-3]
+ 
+    # Check if the stack is empty
+    def isEmpty(self):
+        return self.size == 0
+ 
+    # Get the top item of the stack
+    def peek(self):
+ 
+        # Sanitary check to see if we
+        # are peeking an empty stack.
+        if self.isEmpty():
+            raise Exception("Peeking from an empty stack")
+        return self.head.next.value
+ 
+    # Push a value into the stack.
+    def push(self, value):
+        node = Node(value)
+        node.next = self.head.next
+        self.head.next = node
+        self.size += 1
+ 
+    # Remove a value from the stack and return.
+    def pop(self):
+        if self.isEmpty():
+            raise Exception("Popping from an empty stack")
+        remove = self.head.next
+        self.head.next = self.head.next.next
+        self.size -= 1
+        return remove.value
+ 
+ 
+# Driver Code
+if __name__ == "__main__":
+    stack = Stack()
+    for i in range(1, 11):
+        stack.push(i)
+    print(f"Stack: {stack}")
+ 
+    for _ in range(1, 6):
+        remove = stack.pop()
+        print(f"Pop: {remove}")
+    print(f"Stack: {stack}")
+
+    empty() – O(1)
+    top() / peek() - O(1)
+    push(a) – O(1)
+    pop() – O(1)
+
+
+
+
+
+C# Pilha
+
+
+class Node
+    attr_accessor :data, :nextdef initialize(data)
+        @data = data
+        @next = nil
+    end
+end
+
+class Stack
+    attr_accessor :root, :last, :sizedef initialize
+        @root = nil
+        @last = nil
+        @size = 0
+    end
+end
+
+def push(data)
+        new_node = Node.new(data)
+        if !@root
+            @root = new_node
+            @last = new_node
+        else 
+            old_head = @root
+            @root = new_node
+            new_node.next = old_head
+        end
+        return @size += 1
+    end
+
+def pop
+        return nil if @size==0
+        old_head = @root
+        if @root==@last
+            @last = nil
+        end
+        @root = @root.next
+        @size -= 1
+        return old_head
+    end
+
+def is_empty?
+        return !@root
+    enddef peek
+        return @root
+    end
+
+    empty() – O(1)
+    push(a) – O(1)
+    pop() – O(1)
+    peek() - O(1)
+
+Comparando os principais métodos da pilha em python e Ruby, observamos que apresentam exatamente a mesma complexidade: O(1). Constante.
+
+
