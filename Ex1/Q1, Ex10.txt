@@ -1,0 +1,17 @@
+#Ruby
+#O(n) devido ao while passar por todos os elementos do array
+def segregate(a)
+  left = 0
+  right = a.length - 1
+  while left < right
+    left += 1 while a[left] == 0
+    right -= 1 while a[right] == 1
+    next unless left < right
+
+    a[left], a[right] = a[right], a[left]
+    left += 1
+    right -= 1
+  end
+  a
+end
+puts segregate([1, 0, 0, 0, 1, 1, 0, 1])

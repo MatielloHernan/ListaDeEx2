@@ -1,0 +1,17 @@
+//C++
+
+#include <iostream>
+#include <numeric>
+
+// O(n) devido ao acumulate que passa uma vez por todos os elementos do array para somar
+int arraySum(int a[], int n) {
+  int initial_sum = 0;
+  return std::accumulate(a, a + n, initial_sum);
+}
+
+int main() {
+  int a[] = {5, 10, 15, 20};
+  int n = sizeof(a) / sizeof(a[0]);
+  std::cout << arraySum(a, n);
+  return 0;
+}
