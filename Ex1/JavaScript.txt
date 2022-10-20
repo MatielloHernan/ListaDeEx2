@@ -1,0 +1,21 @@
+// Complexidade O(n) sendo n a quantidade de dias entre as duas datas, pois o algoritimo precisa percorrer todos os dias (incluindo finais de semana) para verificar se o dia deverá ser somado no resultado final ou não
+
+//Algoritimo para calcular dias de semana entre duas data
+
+//f1 = diferença e retorna quando acaba. param = data inicial; param2 = data final; param3 = dia da semana do primeiro parametro
+
+function diferenca(param,param2,param3) {
+    this.dia_feira = 0;
+    this.day = param3.getDay();
+    for (f0=param;f0<=param2;f0++) {
+        if (this.day !== 0 && this.day !== 6) {
+            this.dia_feira += 1;
+        }
+        if (this.day < 6) {
+            this.day += 1;
+        } else {
+            this.day = 0;
+        }
+    }
+    return this.dia_feira;
+}

@@ -1,0 +1,15 @@
+// função para dizer se uma palavra é anagrama de outra
+
+// a complexidade da função count_chars pertencente a biblioteca do php é n, pois ela percorre a string inteira uma vez e soma +1 para a frequencia de cada byte presente na string. Portanto a complexidade final do algoritimo é 2n, pois esse método é chamado duas vezes, e a complexidade assintotia tem limite superior O(n)
+
+function is_anagram($a, $b)
+ {
+       if (count_chars($a, 1) == count_chars($b, 1))
+    {
+        return "This two strings are anagram";
+    }
+    else
+    {
+        return "This two strings are not anagram";
+    }
+ }
